@@ -1,0 +1,22 @@
+---
+- name: Deploy ngnix server
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install nginx web server
+      apt:
+        name: nginx
+        state: present
+
+    - name: Make nginx is Installed 
+      service:
+        name: nginx
+        state: started
+        enabled: true
+    - name: Deploy sample html
+      copy:
+        content: "<h1>Hello its prathmesh</h1>"
+        dest: "/var/www/html/index.html"
+        mode: "0644"
+      

@@ -1,0 +1,7 @@
+- name: installing all at once
+  hosts: local
+  become: true
+
+  roles:
+    - java
+    - python

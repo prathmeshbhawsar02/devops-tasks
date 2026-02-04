@@ -1,0 +1,17 @@
+---
+# tasks file for python
+#- name: uninstalling pyhton3 and pip 
+
+- name: python3
+  apt:
+    name: python3
+    state: present
+  
+
+- name: python verify version
+  command: python --version
+  register: python_version_result
+
+- name: version is 
+  debug: 
+    var: python_version_result.stdoutl

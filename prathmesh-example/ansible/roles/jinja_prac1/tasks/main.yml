@@ -1,0 +1,14 @@
+
+- name: Ensure app config directory exists
+  file:
+    path: /etc/app
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create app config using Jinja2 template
+  template:
+    src: app.conf.j2
+    dest: /etc/app/app.conf
+    mode: '0644'

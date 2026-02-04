@@ -1,0 +1,20 @@
+# - name: installng docker
+#   apt: 
+#     name: docker.io
+#     state: present
+- name: Install Docker on Ubuntu
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+
+- name: start docker
+  service: 
+    name: docker
+    state: started
+
+- name: installing docker-compose
+  apt:
+    name: docker-compose 
+    state: present

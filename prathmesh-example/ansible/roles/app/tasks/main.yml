@@ -1,0 +1,9 @@
+- name: Create app config directory
+  file:
+    path: /etc/app
+    state: directory
+
+- name: Deploy app config
+  template:
+    src: app.conf.j2
+    dest: /etc/app/app.conf

@@ -1,0 +1,34 @@
+--- 
+- name: Nginx install with config files
+  hosts: localhost
+  become: yes
+
+
+  vars: 
+    packages:
+      - nginx 
+      - curl
+      - git
+
+    web_root: /var/www/html/polish_site
+    nginx_port: 8080
+
+
+  tasks:
+    - name: Installing nginx 
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop: "{{packages}}"
+
+
+    - name: create required directories
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: "0764"
+      loop:
+        - "{{web_root}}"
+        - /etc/nginx/custom
+ 

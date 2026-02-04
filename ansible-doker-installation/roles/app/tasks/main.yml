@@ -1,0 +1,18 @@
+ - name: Creating directory for app in controled node
+   file:
+     path: "{{ app_dir }}"
+     state: directory
+     mode: "0777"
+
+ - name: copying application from control to managed node
+   copy: 
+     src: "{{ src_dir }}"
+     dest: "{{ app_dir }}"
+     mode: "0777"
+
+ - name: start using docker-compose
+   command: docker-compose up -d
+   args:
+     chdir: "{{ ch_dir }}"
+
+

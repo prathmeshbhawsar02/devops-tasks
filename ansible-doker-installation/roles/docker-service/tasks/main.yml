@@ -1,0 +1,19 @@
+- name: todo service Creation
+  template:
+    src: todo.service.j2
+    dest: /etc/systemd/system/todo.service
+
+- name: Reload systemd
+  command: systemctl daemon-reload
+
+- name: Enable todo service
+  systemd:
+    name: todo
+    enabled: yes
+
+- name: Creating todo script
+  template:
+    src: todo-script.j2
+    dest: /usr/local/bin/todo
+    mode: "0755"
+

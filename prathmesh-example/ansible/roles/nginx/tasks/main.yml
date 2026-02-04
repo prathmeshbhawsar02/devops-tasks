@@ -1,0 +1,26 @@
+
+- name: installing nginx
+  apt:
+      name: nginx
+      state: latest
+  notify: restart_nginx
+    
+- name: start nginx
+  service:
+        name: nginx
+        state: started
+        enabled: yes
+  
+-  name: stop nginx
+   service:
+         name: nginx
+         state: stopped
+
+  
+
+- name: Show app port (task vars)
+  debug:
+    msg: "App running on port {{ app_port }} | Source: {{ source }}"
+  vars:
+   app_port: 8006
+   source: "task vars"

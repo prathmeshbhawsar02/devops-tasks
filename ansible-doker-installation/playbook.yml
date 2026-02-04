@@ -1,0 +1,9 @@
+- name: installing docker and deploying docker project
+  hosts: all
+  become: true
+
+  roles: 
+    - docker
+    - app
+    # - docker-service
+    # - remove-images

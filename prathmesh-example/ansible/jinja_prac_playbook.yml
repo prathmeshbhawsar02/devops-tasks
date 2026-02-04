@@ -1,0 +1,8 @@
+---
+- name: Jinja2 Role Practice task1
+  hosts: all
+  become: yes
+
+  roles:
+    - jinja_prac1
+

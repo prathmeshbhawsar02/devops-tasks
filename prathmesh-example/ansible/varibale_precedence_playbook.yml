@@ -1,0 +1,11 @@
+- hosts: web
+  become: true
+  gather_facts: false
+
+  vars:
+    app_port: 8004
+    source: "play vars"
+
+  roles:
+    - nginx
+    - java

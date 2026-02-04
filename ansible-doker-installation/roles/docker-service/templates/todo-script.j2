@@ -1,0 +1,13 @@
+ Project_dir="/home/ncs/ansible-todo"
+
+      cd "$Project_dir"
+
+      case "$1" in
+      start)
+        sudo systemctl start todo ;;
+      stop)
+        sudo systemctl stop todo ;; 
+      *)
+        echo "Invalid command"
+        echo "try : ./todo-app start // ./todo-app stop"
+      esac

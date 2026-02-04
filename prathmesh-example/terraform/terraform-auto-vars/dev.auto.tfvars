@@ -1,0 +1,5 @@
+# region = "ap-south-1" 
+subnet_id = "10.0.1.0/24"
+ami_id = "ami-019715e0d74f695be"
+instance_type ="t3.micro"
+instance_name ="instance-name-auto"

@@ -1,0 +1,6 @@
+#  app_dir: /home/ncs/ansible-todo
+# ch_dir: /home/ncs/ansible-todo/
+#  src_dir: /home/ncs/pb/prathmesh-example/docker/docker-todo/
+ src_dir: /home/ubuntu/docker-frontend-backend-db
+ ch_dir: /home/ubuntu/ansible-todo/
+ app_dir: /home/ubuntu/ansible-todo

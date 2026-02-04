@@ -1,0 +1,33 @@
+---
+# tasks file for java
+- name: uninstalling java
+  apt:
+    name: openjdk-17-jdk
+    state: absent
+
+
+- name: installing java
+  apt:
+    name: openjdk-17-jdk
+    state: present
+- name: copying env variables
+  copy: 
+    content: "{{ env_var }}"
+    dest: "{{ dest_java_var }}"
+    mode: "0755"
+
+- name: version info
+  command: java -version
+  register: java_version_result
+
+- name: print java version
+  debug:
+    var: java_version_result.stderr
+
+#- Task for python3 
+
+
+- name: nginx called within role 
+
+  include_role:
+    name: nginx

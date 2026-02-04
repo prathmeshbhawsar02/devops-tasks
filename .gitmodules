@@ -1,0 +1,3 @@
+[submodule "docker-fd-bd-db"]
+	path = docker-fd-bd-db
+	url = https://github.com/knaopel/docker-frontend-backend-db.git

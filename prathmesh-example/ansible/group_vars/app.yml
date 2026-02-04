@@ -1,0 +1,4 @@
+app_name: todo-app
+app_port: 8080
+env: dev
+db_host: localhost

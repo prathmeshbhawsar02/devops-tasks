@@ -11,4 +11,9 @@ resource "aws_instance" "web" {
   tags = {
     Name = "terraform-ec2"
   }
+  user_data = <<EOF
+          
+          
+  
+  EOF
 }

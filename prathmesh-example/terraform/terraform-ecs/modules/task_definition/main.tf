@@ -30,6 +30,8 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
         retries     = 5
         startPeriod = 20
       }
+
+
       essential = false
       environment = [
         { name = "MONGO_INITDB_ROOT_USERNAME", value = "username" },
@@ -56,6 +58,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           condition     = "HEALTHY"
         }
       ]
+
       essential = false
 
       environment = [
@@ -64,6 +67,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           value = var.MONGO_URL
         }
       ]
+
       logConfiguration = {
         logDriver = "awslogs"
         options = {
@@ -86,13 +90,15 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           protocol      = "tcp"
         }
       ]
+
+
       dependsOn = [
         {
           containerName = "backend"
           condition     = "START"
         }
       ]
-      
+
       logConfiguration = {
         logDriver = "awslogs"
         options = {
@@ -109,6 +115,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           value = "http://localhost:3001"
         }
       ]
+
       essential = true
 
 

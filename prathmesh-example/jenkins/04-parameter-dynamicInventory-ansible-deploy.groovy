@@ -48,7 +48,8 @@ pipeline {
                     sh '''
                     
                     cd docker-todo
-                      ansible-playbook -u ubuntu --private-key 001.pem -i aws_ec2.yaml playbook.yml 
+                    chmod 400 001.pem
+                     ansible-playbook -u ubuntu --private-key 001.pem -i aws_ec2.yaml playbook.yml 
                     '''
                 }
             }

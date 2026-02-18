@@ -110,7 +110,7 @@ pipeline
                 rm -r -f docker-todo
                 git clone https://github.com/prathmeshbhawsar02/docker-todo.git
                           cd docker-todo
-                          git checkout v1.0.7
+                          git checkout v1.1.0
 
                    """
 
@@ -127,7 +127,7 @@ pipeline
                         cd docker-todo
                         export ANSIBLE_HOST_KEY_CHECKING=False
                         chmod 400 "001.pem"
-                        ansible-playbook -u ubuntu --private-key 001.pem -i aws_ec2.yaml playbook.yml 
+                        ansible-playbook -u ubuntu --private-key 001.pem -i dynamic.aws_ec2.yaml playbook.yml 
                         ''' 
                         }
                         catch (err)

@@ -1,0 +1,17 @@
+Respected Sir,
+ 
+Today I have done the following tasks :-
+
+1. Installed and run node exporter on ec2 instance on port 9100 running the docker containers which will give realtime metrics of the running instance and Configured node exporter url as target in Prometheus.yml 
+
+2. Created a ec2 instance and configured Grafana on port 3000 for visualization and dashboard creation of the instance metrics data.
+
+3. Integrated node exporter , Prometheus (metrics data) and Grafana (visualization and dashboard creation) to create a infrastructure monitoring system.
+
+4. Installed and configured Promtail and Loki for log aggregation on ec2 instance running docker containers.
+
+Tomorrow's plan:- Continue working on Prometheus, Grafana, Promtail and Loki.
+
+Thanks & Regards,
+ 
+Prathmesh Bhawsar

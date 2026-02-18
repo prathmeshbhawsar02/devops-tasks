@@ -1,0 +1,5 @@
+---
+prometheus_scrape_interval: 5s
+prometheus_evaluation_interval: 5s
+prometheus_target: localhost:9090
+# node_exporter_target: 13.200.253.16:9100

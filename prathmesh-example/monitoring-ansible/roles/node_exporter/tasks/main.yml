@@ -1,0 +1,30 @@
+- name: Download Node Exporter
+  get_url:
+    url: https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+    dest: /home/ubuntu/node_exporter.tar.gz
+
+- name: Extract Node Exporter
+  unarchive:
+    src: /home/ubuntu/node_exporter.tar.gz
+    dest: /usr/local/bin/
+    remote_src: yes
+
+- name: Create systemd service
+  copy:
+    dest: /etc/systemd/system/node_exporter.service
+    content: |
+      [Unit]
+      Description=Node Exporter
+      After=network.target
+
+      [Service]
+      ExecStart=/usr/local/bin/node_exporter-1.10.2.linux-amd64/node_exporter
+
+      [Install]
+      WantedBy=multi-user.target
+
+- name: Start Node Exporter
+  systemd:
+    name: node_exporter
+    enabled: yes
+    state: started

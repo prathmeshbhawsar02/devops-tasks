@@ -1,0 +1,13 @@
+---
+- name: Install Prometheus
+  apt:
+    name: prometheus
+    state: present
+
+- name: Copy Prometheus configuration file
+  template:
+    src: prometheus-config.j2
+    dest: /etc/prometheus/prometheus.yml
+  notify:
+     - Restart Prometheus
+

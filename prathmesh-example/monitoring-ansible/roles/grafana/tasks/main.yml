@@ -1,0 +1,16 @@
+- name: Install Docker on Ubuntu
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+- name: Run Grafana container
+  community.docker.docker_container:
+    name: grafana
+    image: grafana/grafana-enterprise
+    state: started
+    restart_policy: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana

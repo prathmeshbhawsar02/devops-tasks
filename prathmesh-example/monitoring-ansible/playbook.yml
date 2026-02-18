@@ -1,0 +1,32 @@
+- hosts: role_app_server
+  become: true
+  roles:
+    - node_exporter
+
+
+
+- hosts: role_Prometheus
+  become: true
+  gather_facts: true
+  roles:
+    - prometheus
+
+
+
+- hosts: role_Grafana
+  become: true
+  roles:
+    - grafana
+
+# - hosts: role_loki
+#   become: true
+#   roles:
+#     - loki
+
+
+# #     - promtail
+# #     - loki
+
+#grafana-done
+#node_exporter-done
+#prometheus-done
